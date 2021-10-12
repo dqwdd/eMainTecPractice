@@ -15,12 +15,15 @@ abstract class BaseFragment : Fragment() {
 
     lateinit var mContext: Context
 
+    lateinit var txtTitle: TextView
+
     // 뷰가 그려지는 시기
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setCustomActionBar()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -28,9 +31,20 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mContext = requireContext()
+        setCustomActionBar()
     }
 
     abstract fun setupEvents()
     abstract fun setValues()
+
+    private fun setCustomActionBar() {
+        val defActionBar = (requireActivity() as AppCompatActivity).supportActionBar!!
+
+        defActionBar.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+        defActionBar.setCustomView(R.layout.custom_action_bar)
+        //defActionBar.elevation = 0F
+
+        txtTitle = defActionBar.customView.findViewById(R.id.txt_title)
+    }
 
 }
