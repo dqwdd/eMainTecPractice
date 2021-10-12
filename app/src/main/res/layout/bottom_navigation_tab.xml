@@ -6,7 +6,7 @@
     android:elevation="5dp">
 
     <RelativeLayout
-        android:id="@+id/btn_bottom_navi_home_tab"
+        android:id="@+id/bottomCheckTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
@@ -19,7 +19,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/btn_bottom_navi_search_tab"
+        android:id="@+id/bottomRequestWorkTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
@@ -32,7 +32,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/btn_bottom_navi_add_tab"
+        android:id="@+id/bottomRequestAcceptTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
@@ -44,7 +44,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/btn_bottom_navi_like_tab"
+        android:id="@+id/bottomSettingTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
