@@ -9,6 +9,12 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="bottomCheckTab">점검</string>
+    <string name="bottomRequestWorkTab">작업요청</string>
+    <string name="bottomRequestAcceptTab">요청접수</string>
+    <string name="bottomSettingTab">작업</string>
+
 </resources>

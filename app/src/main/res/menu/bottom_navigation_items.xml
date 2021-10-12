@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/bottomCheckTab"
         android:icon="@drawable/check_icon"
-        android:title="점검" />
+        android:enabled="true"
+        android:title="@string/bottomCheckTab"/>
+
     <item
         android:id="@+id/bottomRequestWorkTab"
         android:icon="@drawable/out_icon"
-        android:title="작업요청" />
+        android:enabled="true"
+        android:title="@string/bottomRequestWorkTab"/>
 
     <item
         android:id="@+id/bottomRequestAcceptTab"
         android:icon="@drawable/in_icon"
-        android:title="요청접수" />
+        android:enabled="true"
+        android:title="@string/bottomRequestAcceptTab"/>
 
     <item
         android:id="@+id/bottomSettingTab"
         android:icon="@drawable/settin_icon"
-        android:title="작업" />
+        android:enabled="true"
+        android:title="@string/bottomSettingTab"/>
 
 </menu>

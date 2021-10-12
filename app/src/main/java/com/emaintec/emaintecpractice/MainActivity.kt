@@ -1,7 +1,11 @@
 package com.emaintec.emaintecpractice
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.view.Menu
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.activity.viewModels
@@ -18,6 +22,11 @@ class MainActivity : BaseActivity() {
     lateinit var binding: ActivityMainBinding
 
     val mainViewModel : MainViewModel by viewModels()
+
+    private val fragmentOne by lazy { CheckFragment() }
+    private val fragmentTwo by lazy { RequestAcceptFragment() }
+    private val fragmentThree by lazy { RequestWorkFragment() }
+    private val fragmentFour by lazy { SettingFragment() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +47,7 @@ class MainActivity : BaseActivity() {
 
         replaceFragment(CheckFragment())
 
-        binding.navBarBottom.setOnItemSelectedListener { item ->
+        binding.naviBarBottom.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.bottomCheckTab -> replaceFragment(CheckFragment())
                 R.id.bottomRequestWorkTab -> replaceFragment(RequestAcceptFragment())
@@ -48,12 +57,28 @@ class MainActivity : BaseActivity() {
             }
             true
         }
-
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.bottom_navigation_items,menu)
+
+        // change menu text color programmatically
+        menu?.apply {
+            for(index in 0 until this.size()){
+                val item = this.getItem(index)
+                val s = SpannableString(item.title)
+                s.setSpan(ForegroundColorSpan(Color.BLACK),0,s.length,0)
+                item.title = s
+            }
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     private fun replaceFragment(fragment: Fragment){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout_main, fragment)
+        fragmentTransaction.replace(R.id.mainFrameLayout, fragment)
         fragmentTransaction.commit()
     }
 
