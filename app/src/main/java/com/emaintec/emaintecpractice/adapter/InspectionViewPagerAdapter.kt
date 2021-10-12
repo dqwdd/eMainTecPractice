@@ -6,15 +6,17 @@ import com.emaintec.emaintecpractice.main_fragment.InspactionFragment
 import com.emaintec.emaintecpractice.main_fragment.RequestAcceptFragment
 import com.emaintec.emaintecpractice.main_fragment.RequestWorkFragment
 import com.emaintec.emaintecpractice.main_fragment.SettingFragment
+import com.emaintec.emaintecpractice.main_fragment.inspection_fragment.AllInspectionFragment
+import com.emaintec.emaintecpractice.main_fragment.inspection_fragment.InspectionCompleteFragment
+import com.emaintec.emaintecpractice.main_fragment.inspection_fragment.UnCheckedFragment
 
 class InspectionViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment =
         when (position) {
-            0 -> InspactionFragment()
-            1 -> RequestAcceptFragment()
-            2 -> RequestWorkFragment()
-            else -> SettingFragment()
+            0 -> AllInspectionFragment()
+            1 -> UnCheckedFragment()
+            else -> InspectionCompleteFragment()
         }
 }
