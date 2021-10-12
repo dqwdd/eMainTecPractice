@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomCheckTab"
+        android:icon="@drawable/check_icon"
+        android:title="점검" />
+    <item
+        android:id="@+id/bottomRequestWorkTab"
+        android:icon="@drawable/out_icon"
+        android:title="작업요청" />
+
+    <item
+        android:id="@+id/bottomRequestAcceptTab"
+        android:icon="@drawable/in_icon"
+        android:title="요청접수" />
+
+    <item
+        android:id="@+id/bottomSettingTab"
+        android:icon="@drawable/settin_icon"
+        android:title="작업" />
+
+</menu>

@@ -6,8 +6,12 @@ import android.view.View
 import android.widget.RelativeLayout
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import com.emaintec.emaintecpractice.adapter.MainViewPagerAdapter
+import androidx.fragment.app.Fragment
 import com.emaintec.emaintecpractice.databinding.ActivityMainBinding
+import com.emaintec.emaintecpractice.main_fragment.CheckFragment
+import com.emaintec.emaintecpractice.main_fragment.RequestAcceptFragment
+import com.emaintec.emaintecpractice.main_fragment.RequestWorkFragment
+import com.emaintec.emaintecpractice.main_fragment.SettingFragment
 
 class MainActivity : BaseActivity() {
 
@@ -25,26 +29,33 @@ class MainActivity : BaseActivity() {
 
         setupEvent()
         setValues()
-        configureBottomNavigation()
     }
 
     override fun setupEvent() {
     }
 
     override fun setValues() {
+
+        replaceFragment(CheckFragment())
+
+        binding.navBarBottom.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.bottomCheckTab -> replaceFragment(CheckFragment())
+                R.id.bottomRequestWorkTab -> replaceFragment(RequestAcceptFragment())
+                R.id.bottomRequestAcceptTab -> replaceFragment(RequestWorkFragment())
+                R.id.bottomSettingTab -> replaceFragment(SettingFragment())
+                else -> { }
+            }
+            true
+        }
+
     }
 
-
-    private fun configureBottomNavigation(){
-        binding.mainViewPager2.adapter = MainViewPagerAdapter(getIdolList()) // 어댑터 생성
-        binding.mainBottomMenu.setupWithViewPager(binding.mainViewPager2)
-
-        val bottomNaviLayout: View = this.layoutInflater.inflate(R.layout.bottom_navigation_tab, null, false)
-
-        binding.mainBottomMenu.getTabAt(0)!!.customView = bottomNaviLayout.findViewById(R.id.bottomCheckTab) as RelativeLayout
-        binding.mainBottomMenu.getTabAt(1)!!.customView = bottomNaviLayout.findViewById(R.id.bottomRequestWorkTab) as RelativeLayout
-        binding.mainBottomMenu.getTabAt(2)!!.customView = bottomNaviLayout.findViewById(R.id.bottomRequestAcceptTab) as RelativeLayout
-        binding.mainBottomMenu.getTabAt(3)!!.customView = bottomNaviLayout.findViewById(R.id.bottomSettingTab) as RelativeLayout
+    private fun replaceFragment(fragment: Fragment){
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout_main, fragment)
+        fragmentTransaction.commit()
     }
+
 
 }
