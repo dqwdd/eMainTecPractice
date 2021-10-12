@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.emaintec.emaintecpractice.R
-import com.emaintec.emaintecpractice.databinding.FragmentRequestAcceptBinding
 import com.emaintec.emaintecpractice.databinding.FragmentRequestWorkBinding
 
 class RequestWorkFragment : BaseFragment() {

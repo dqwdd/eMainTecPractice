@@ -1,18 +1,15 @@
 package com.emaintec.emaintecpractice
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.Menu
-import android.view.View
-import android.widget.RelativeLayout
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.emaintec.emaintecpractice.databinding.ActivityMainBinding
-import com.emaintec.emaintecpractice.main_fragment.CheckFragment
+import com.emaintec.emaintecpractice.main_fragment.InspactionFragment
 import com.emaintec.emaintecpractice.main_fragment.RequestAcceptFragment
 import com.emaintec.emaintecpractice.main_fragment.RequestWorkFragment
 import com.emaintec.emaintecpractice.main_fragment.SettingFragment
@@ -23,7 +20,7 @@ class MainActivity : BaseActivity() {
 
     val mainViewModel : MainViewModel by viewModels()
 
-    private val fragmentOne by lazy { CheckFragment() }
+    private val fragmentOne by lazy { InspactionFragment() }
     private val fragmentTwo by lazy { RequestAcceptFragment() }
     private val fragmentThree by lazy { RequestWorkFragment() }
     private val fragmentFour by lazy { SettingFragment() }
@@ -45,11 +42,11 @@ class MainActivity : BaseActivity() {
 
     override fun setValues() {
 
-        replaceFragment(CheckFragment())
+        replaceFragment(InspactionFragment())
 
         binding.naviBarBottom.setOnItemSelectedListener { item ->
             when(item.itemId){
-                R.id.bottomCheckTab -> replaceFragment(CheckFragment())
+                R.id.bottomCheckTab -> replaceFragment(InspactionFragment())
                 R.id.bottomRequestWorkTab -> replaceFragment(RequestAcceptFragment())
                 R.id.bottomRequestAcceptTab -> replaceFragment(RequestWorkFragment())
                 R.id.bottomSettingTab -> replaceFragment(SettingFragment())
