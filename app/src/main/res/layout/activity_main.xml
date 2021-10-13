@@ -47,7 +47,7 @@
                 android:layout_gravity="center_vertical|center"
                 android:text="Jump"
                 android:textColor="@color/jump"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <ImageView
