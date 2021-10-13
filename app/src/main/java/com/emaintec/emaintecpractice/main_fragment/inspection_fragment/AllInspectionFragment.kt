@@ -16,6 +16,9 @@ import java.util.*
 
 class AllInspectionFragment : BaseFragment() {
 
+    val mSelectedDateTime = Calendar.getInstance()
+
+
     lateinit var binding: FragmentAllInspectionBinding
 
     override fun onCreateView(
@@ -33,6 +36,8 @@ class AllInspectionFragment : BaseFragment() {
     }
 
     override fun setupEvents() {
+        dateSelectfirstDateText()
+        dateSelectsecondDateText()
     }
 
     override fun setValues() {
@@ -40,7 +45,43 @@ class AllInspectionFragment : BaseFragment() {
 
 
 
+    fun dateSelectfirstDateText() {
+        binding.firstDateText.setOnClickListener {
+            val dateSetListener =
+                DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
+                    mSelectedDateTime.set(year, month, day)
+                    binding.firstDateText.text =
+                        SimpleDateFormat("yyyy. M. d HH:mm").format(mSelectedDateTime.time)
+                }
+            DatePickerDialog(
+                mContext,
+                dateSetListener,
+                mSelectedDateTime.get(Calendar.YEAR),
+                mSelectedDateTime.get(Calendar.MONTH),
+                mSelectedDateTime.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+    }
 
+
+
+    fun dateSelectsecondDateText() {
+        binding.secondDateText.setOnClickListener {
+            val dateSetListener =
+                DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
+                    mSelectedDateTime.set(year, month, day)
+                    binding.secondDateText.text =
+                        SimpleDateFormat("yyyy. M. d").format(mSelectedDateTime.time)
+                }
+            DatePickerDialog(
+                mContext,
+                dateSetListener,
+                mSelectedDateTime.get(Calendar.YEAR),
+                mSelectedDateTime.get(Calendar.MONTH),
+                mSelectedDateTime.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+    }
 
 
 }
