@@ -1,15 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/edge_backgraound"
         tools:context=".main_fragment.inspection_fragment.AllInspectionFragment">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bbackgraound"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    android:text="2021-08-08" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:textSize="20sp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="2021-08-08" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="설비번호를 입력하세요"/>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|right"
+                    android:padding="2dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/gray"
+                    android:src="@drawable/delete_icon"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:padding="10dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="검색어를 입력하세요"/>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|right"
+                    android:padding="2dp"
+                    android:layout_marginRight="55dp"
+                    android:background="@color/gray"
+                    android:src="@drawable/delete_icon"/>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|right"
+                    android:padding="2dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/gray"
+                    android:src="@drawable/magnifiericon"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:background="@color/white"
+            android:layout_marginTop="10dp"/>
 
-    </FrameLayout>
+
+
+    </LinearLayout>
 </layout>

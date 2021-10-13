@@ -23,7 +23,7 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setCustomActionBar()
+        //setCustomActionBar()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -31,12 +31,13 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mContext = requireContext()
-        setCustomActionBar()
+        //setCustomActionBar()
     }
 
     abstract fun setupEvents()
     abstract fun setValues()
 
+/*
     private fun setCustomActionBar() {
         val defActionBar = (requireActivity() as AppCompatActivity).supportActionBar!!
 
@@ -45,6 +46,8 @@ abstract class BaseFragment : Fragment() {
         //defActionBar.elevation = 0F
 
         txtTitle = defActionBar.customView.findViewById(R.id.txt_title)
+
     }
+*/
 
 }

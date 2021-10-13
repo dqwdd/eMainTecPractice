@@ -17,15 +17,16 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = this
-
+/*
         supportActionBar?.let {
             setCustomActionBar()
         }
+ */
     }
 
     abstract fun setupEvent()
     abstract fun setValues()
-
+/*
     fun setCustomActionBar() {
         val defActionBar = supportActionBar!!
 
@@ -39,5 +40,5 @@ abstract class BaseActivity : AppCompatActivity() {
         txtTitle = defActionBar.customView.findViewById(R.id.txt_title)
 
     }
-
+*/
 }

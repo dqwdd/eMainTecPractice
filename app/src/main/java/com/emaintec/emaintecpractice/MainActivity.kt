@@ -20,12 +20,6 @@ class MainActivity : BaseActivity() {
 
     val mainViewModel : MainViewModel by viewModels()
 
-    private val fragmentOne by lazy { InspactionFragment() }
-    private val fragmentTwo by lazy { RequestAcceptFragment() }
-    private val fragmentThree by lazy { RequestWorkFragment() }
-    private val fragmentFour by lazy { SettingFragment() }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -56,7 +50,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-
+/*
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.bottom_navigation_items,menu)
 
@@ -71,7 +65,7 @@ class MainActivity : BaseActivity() {
         }
         return super.onCreateOptionsMenu(menu)
     }
-
+*/
 
     private fun replaceFragment(fragment: Fragment){
         val fragmentTransaction = supportFragmentManager.beginTransaction()

@@ -1,5 +1,7 @@
 package com.emaintec.emaintecpractice.main_fragment.inspection_fragment
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +11,8 @@ import androidx.databinding.DataBindingUtil
 import com.emaintec.emaintecpractice.R
 import com.emaintec.emaintecpractice.databinding.FragmentAllInspectionBinding
 import com.emaintec.emaintecpractice.main_fragment.BaseFragment
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AllInspectionFragment : BaseFragment() {
 
@@ -33,5 +37,10 @@ class AllInspectionFragment : BaseFragment() {
 
     override fun setValues() {
     }
+
+
+
+
+
 
 }
